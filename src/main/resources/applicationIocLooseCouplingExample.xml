@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="userWebServiceProvider" class="com.loose.ioc.UserWebServiceProvider"/>
+
+    <bean id="userDatabaseProvider" class="com.loose.ioc.UserDatabaseProvider"/>
+
+    <bean id="userWithWebServiceProvider" class="com.loose.ioc.UserManager">
+        <constructor-arg ref="userWebServiceProvider"/>
+    </bean>
+
+    <bean id="userWithDatabaseProvider" class="com.loose.ioc.UserManager">
+        <constructor-arg ref="userDatabaseProvider"/>
+    </bean>
+
+</beans>

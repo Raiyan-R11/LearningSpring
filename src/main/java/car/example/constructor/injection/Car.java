@@ -8,6 +8,7 @@ public class Car {
     }
 
     public void displayDetails(){
-        System.out.println("Car Detials: "+specification.toString());
+        System.out.println("Car Detials: "
+                +specification.toString());
     }
 }
