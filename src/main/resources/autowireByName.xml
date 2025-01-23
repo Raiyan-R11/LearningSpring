@@ -5,13 +5,13 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="carSpecification" class="car.example.constructor.injection.Specification">
+    <bean id="specification" class="com.example.autowire.name.Specification">
         <property name="make" value="Mclaren"/>
         <property name="model" value="720s"/>
     </bean>
+    <!-- ^ initialized with setter -->
 
-    <bean id="myCar" class="car.example.constructor.injection.Car">
-        <constructor-arg ref="carSpecification"/>
-    </bean>
-
+    <bean id="myCar" class="com.example.autowire.name.Car" autowire="byName"/>
+    <!-- ^ byName: property name IN car class must match name of bean -->
+    <!-- ^ injection happens by setter. setter must have setName where property is Name -->
 </beans>
