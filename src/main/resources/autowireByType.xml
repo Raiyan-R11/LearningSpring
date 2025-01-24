@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="specification2" class="com.example.autowire.type.Specification">
+        <property name="make" value="Mclaren"/>
+        <property name="model" value="720s"/>
+    </bean>
+    <!-- ^ initialized with setter -->
+
+    <bean id="myCar" class="com.example.autowire.type.Car" autowire="byType"/>
+    <!-- ^ byName: property name IN car class must match name of bean -->
+    <!-- ^ injection happens by setter. setter must have setName where property is Name -->
+</beans>
